@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 馬祖四鄉五島旅遊終極指南 v3</title>
-	<!-- 社群分享預覽（LINE / FB / Twitter） -->
+    <!-- 社群分享預覽（LINE / FB / Twitter） -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://pkbw2000.github.io/matsu/index.html">
     <meta property="og:title" content="2026 馬祖四鄉五島旅遊終極指南 v3">
@@ -170,10 +170,19 @@
             }
             .nav-links.open {
                 transform: translateY(0);
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 12px 16px;
+                gap: 8px;
+                max-height: 70vh;
+                overflow-y: auto;
             }
             .nav-links a {
-                font-size: 15px;
-                padding: 10px 16px;
+                font-size: 14px;
+                padding: 8px 14px;
+                white-space: normal;
+                word-break: break-word;
             }
         }
 
@@ -246,7 +255,6 @@
             max-width: 800px;
         }
 
-        /* ---- 修改：hero-tag 容器保留原背景，内部文字流光 ---- */
         .hero-tag-wrapper {
             display: flex;
             align-items: center;
@@ -269,7 +277,6 @@
             overflow: hidden;
         }
 
-        /* 金色粗体 + 流光 */
         .shimmer-text {
             font-weight: 900;
             background: linear-gradient(90deg, #d4a017, #f5d76e, #d4a017, #f5d76e, #d4a017);
@@ -289,7 +296,6 @@
             }
         }
 
-        /* ---- 分享連結 ---- */
         .share-link {
             color: rgba(255, 255, 255, 0.85);
             font-size: 22px;
@@ -1191,863 +1197,156 @@
             }
         }
 
-        /* ===== MOBILE TYPOGRAPHY & LAYOUT OPTIMIZATION ===== */
-
-        /* --- Prevent iOS landscape text auto-zoom --- */
-        html {
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-        }
-
-        /* --- Word break safety for narrow screens --- */
-        .detail-card li,
-        .contact-box .ct-val,
-        .note-box,
-        .day-content p,
-        .budget-row .item {
-            overflow-wrap: break-word;
-            word-break: break-word;
-        }
-
-        /* --- Table horizontal scroll (768px and below) --- */
+        /* ===== 手機排版優化規則 ===== */
         @media (max-width: 768px) {
-            .season-table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                min-width: 480px;
-            }
-            .transport-table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                min-width: 460px;
-            }
-        }
-
-        /* --- Supplementary 600px rules (fill gaps in existing media query) --- */
-        @media (max-width: 600px) {
-            .container {
-                padding: 0 16px;
-            }
-            .hero {
-                min-height: 520px;
-            }
-            .hero-content {
-                padding: 60px 16px 40px;
-            }
-            .hero-tag {
-                font-size: 11px;
-                letter-spacing: 2px;
-                padding: 5px 14px;
-            }
-            .hero-stats {
-                gap: 16px;
-            }
-            .hero-stat .num {
-                font-size: 22px;
-            }
-            .hero-stat .label {
-                font-size: 10px;
-                letter-spacing: 1px;
-            }
-            .island-header {
-                padding: 18px 20px;
-            }
-            .island-header .num {
-                font-size: 32px;
-            }
-            .island-header h3 {
-                font-size: 20px;
-            }
-            .detail-card {
-                padding: 18px;
-            }
-            .detail-card li {
-                font-size: 13px;
-                line-height: 1.65;
-            }
-            .detail-card li .info {
-                font-size: 11px;
-            }
-            .spot-gallery {
-                grid-template-columns: 1fr;
-            }
-            .spot-img-card img {
-                height: 180px;
-            }
-            .tips-grid {
-                grid-template-columns: 1fr;
-            }
-            .budget-box {
-                padding: 16px 18px;
-            }
-            .tip-card {
-                padding: 18px;
-            }
-            .note-box {
-                padding: 14px 16px;
-                font-size: 13px;
-            }
-            .contact-box {
-                padding: 12px 14px;
-                font-size: 12px;
-            }
-            .contact-box .ct-label {
-                min-width: 42px;
-            }
-            .footer {
-                padding: 36px 16px;
-            }
-            .footer p {
-                font-size: 13px;
-            }
-            .footer .disclaimer {
-                font-size: 11px;
-            }
-            .footer-links {
-                gap: 12px;
-            }
-            .footer-links a {
-                font-size: 12px;
-            }
-            #backTop {
-                width: 42px;
-                height: 42px;
-                font-size: 18px;
-                bottom: 20px;
-                right: 16px;
-            }
-            .day-badge {
-                width: 46px;
-                height: 46px;
-                font-size: 13px;
-            }
-            .day-content h4 {
-                font-size: 15px;
-            }
-            .day-content p {
-                font-size: 13px;
-            }
-        }
-
-        /* --- 480px: Small phones (iPhone SE, Galaxy S) --- */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 14px;
-            }
-            .hero {
-                min-height: 460px;
-            }
-            .hero-content {
-                padding: 50px 14px 30px;
-            }
-            .hero h1 {
-                font-size: 22px;
-                letter-spacing: 1px;
-                margin-bottom: 12px;
-            }
-            .hero-sub {
-                font-size: 13px;
-                line-height: 1.6;
-            }
-            .hero-tag {
-                font-size: 10px;
-                letter-spacing: 1.5px;
-                padding: 4px 12px;
-            }
-            .hero-tag-wrapper {
+            .nav-links.open {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 12px 16px;
                 gap: 8px;
-                margin-bottom: 18px;
-            }
-            .hero-stats {
-                gap: 12px;
-                margin-top: 20px;
-            }
-            .hero-stat .num {
-                font-size: 19px;
-            }
-            .hero-stat .label {
-                font-size: 9px;
-                letter-spacing: 0.5px;
-            }
-            .share-link {
-                font-size: 16px;
-            }
-            .nav-brand {
-                font-size: 14px;
-                letter-spacing: 0.5px;
+                max-height: 70vh;
+                overflow-y: auto;
             }
             .nav-links a {
                 font-size: 14px;
                 padding: 8px 14px;
-            }
-            .section-title {
-                margin: 36px 0 20px;
-            }
-            .section-title h2 {
-                font-size: 19px;
-                padding-bottom: 10px;
-            }
-            .section-title p {
-                font-size: 12px;
-                margin-top: 8px;
-            }
-            .islands-grid {
-                gap: 12px;
-            }
-            .island-card {
-                padding: 18px 10px;
-            }
-            .island-card .icon {
-                font-size: 28px;
-                margin-bottom: 8px;
-            }
-            .island-card h3 {
-                font-size: 15px;
-            }
-            .island-card .nickname {
-                font-size: 11px;
-            }
-            .island-card p {
-                font-size: 12px;
-                line-height: 1.45;
-            }
-            .island-header {
-                padding: 14px 16px;
-                gap: 12px;
-            }
-            .island-header .num {
-                font-size: 28px;
-            }
-            .island-header h3 {
-                font-size: 17px;
-                letter-spacing: 0.5px;
-            }
-            .island-header .sub {
-                font-size: 11px;
-            }
-            .detail-card {
-                padding: 14px;
-            }
-            .detail-card .label {
-                font-size: 13px;
-                margin-bottom: 10px;
-                padding-bottom: 6px;
-            }
-            .detail-card .label .emoji {
-                font-size: 16px;
-            }
-            .detail-card li {
-                font-size: 12px;
-                padding: 6px 0;
-                padding-left: 14px;
-                line-height: 1.55;
-            }
-            .detail-card li::before {
-                top: 14px;
-                width: 5px;
-                height: 5px;
-            }
-            .detail-card li .info {
-                font-size: 10px;
-                margin-top: 1px;
-            }
-            .detail-card li .tag {
-                font-size: 10px;
-                padding: 1px 5px;
-                margin-left: 4px;
-            }
-            .budget-box {
-                padding: 12px 14px;
-            }
-            .budget-row {
-                font-size: 12px;
-                padding: 6px 0;
-            }
-            .budget-total .label-text {
-                font-size: 13px;
-            }
-            .budget-total .total-price {
-                font-size: 17px;
-            }
-            .season-section,
-            .itinerary-section {
-                padding: 14px;
-            }
-            .season-table {
-                font-size: 11px;
-                min-width: 420px;
-            }
-            .season-table th {
-                padding: 8px 4px;
-            }
-            .season-table td {
-                padding: 7px 4px;
-            }
-            .badge-best,
-            .badge-good,
-            .badge-avoid {
-                font-size: 10px;
-                padding: 2px 6px;
-            }
-            .transport-table {
-                font-size: 11px;
-                min-width: 400px;
-            }
-            .transport-table th {
-                padding: 10px 5px;
-            }
-            .transport-table td {
-                padding: 7px 5px;
-            }
-            .tip-card {
-                padding: 14px;
-            }
-            .tip-card h4 {
-                font-size: 14px;
-                margin-bottom: 8px;
-            }
-            .tip-card p,
-            .tip-card li {
-                font-size: 12px;
-                line-height: 1.6;
-            }
-            .tip-card li {
-                padding-left: 14px;
-            }
-            .note-box {
-                padding: 12px 14px;
-                font-size: 12px;
-                line-height: 1.6;
-            }
-            .contact-box {
-                padding: 10px 12px;
-                font-size: 11px;
-            }
-            .contact-box .ct-name {
-                font-size: 13px;
-            }
-            .contact-box .ct-label {
-                min-width: 38px;
-                font-size: 11px;
-            }
-            .itinerary-tabs {
-                gap: 6px;
-                margin-bottom: 16px;
-            }
-            .itinerary-tab {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-            .itinerary-day {
-                gap: 10px;
-                padding: 12px 0;
-                padding-left: 4px;
-            }
-            .day-badge {
-                width: 42px;
-                height: 42px;
-                font-size: 12px;
-            }
-            .day-badge span {
-                font-size: 9px;
-            }
-            .day-content h4 {
-                font-size: 13px;
-                margin-bottom: 3px;
-            }
-            .day-content p {
-                font-size: 12px;
-                line-height: 1.5;
-            }
-            .spot-gallery {
-                gap: 10px;
-                margin: 14px 0;
-            }
-            .spot-img-card img {
-                height: 160px;
-            }
-            .spot-img-card .spot-caption {
-                padding: 8px 12px;
-                font-size: 11px;
-                line-height: 1.5;
-            }
-            .spot-img-card .spot-caption strong {
-                font-size: 12px;
-                margin-bottom: 1px;
-            }
-            .spot-img-card .spot-caption .spot-desc {
-                font-size: 10px;
-            }
-            .footer {
-                padding: 28px 14px;
-            }
-            .footer p {
-                font-size: 12px;
-            }
-            .footer .disclaimer {
-                font-size: 10px;
-                margin-top: 12px;
-            }
-            .footer-links {
-                gap: 10px;
-                margin-top: 16px;
-            }
-            .footer-links a {
-                font-size: 11px;
-            }
-            #backTop {
-                width: 38px;
-                height: 38px;
-                font-size: 16px;
-                bottom: 16px;
-                right: 12px;
+                white-space: normal;
+                word-break: break-word;
             }
         }
 
-        /* --- 380px: Very small phones (iPhone SE 1st gen, older Androids) --- */
-        @media (max-width: 380px) {
-            .container {
-                padding: 0 12px;
-            }
-            .hero {
-                min-height: 420px;
-            }
-            .hero-content {
-                padding: 44px 12px 24px;
-            }
-            .hero h1 {
-                font-size: 19px;
-                letter-spacing: 0.5px;
-                margin-bottom: 10px;
-            }
-            .hero-sub {
-                font-size: 12px;
-                line-height: 1.55;
-            }
-            .hero-tag {
-                font-size: 9px;
-                letter-spacing: 1px;
-                padding: 4px 10px;
-            }
-            .hero-tag-wrapper {
-                gap: 6px;
-                margin-bottom: 14px;
-            }
-            .hero-stats {
-                gap: 8px;
-                margin-top: 16px;
-            }
-            .hero-stat .num {
-                font-size: 17px;
-            }
-            .hero-stat .label {
-                font-size: 8px;
-                letter-spacing: 0.3px;
-            }
-            .share-link {
-                font-size: 14px;
-            }
-            .nav-brand {
-                font-size: 13px;
-            }
-            .nav-brand .dot {
-                width: 6px;
-                height: 6px;
-            }
-            #navToggle {
-                font-size: 22px;
-            }
-            .nav-links a {
-                font-size: 13px;
-                padding: 7px 12px;
-            }
-            .section-title {
-                margin: 28px 0 16px;
-            }
-            .section-title h2 {
-                font-size: 17px;
-                padding-bottom: 8px;
-            }
-            .section-title h2::after {
-                width: 36px;
-                height: 2px;
-            }
-            .section-title p {
-                font-size: 11px;
-                margin-top: 6px;
-            }
+        @media (max-width: 450px) {
             .islands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
                 gap: 10px;
-                margin: 20px 0;
             }
             .island-card {
-                padding: 14px 8px;
-            }
-            .island-card .icon {
-                font-size: 24px;
-                margin-bottom: 6px;
+                padding: 16px 10px;
             }
             .island-card h3 {
-                font-size: 14px;
-                margin-bottom: 4px;
-            }
-            .island-card .nickname {
-                font-size: 10px;
-                margin-bottom: 6px;
-            }
-            .island-card p {
-                font-size: 11px;
-                line-height: 1.4;
-            }
-            .island-detail {
-                margin: 36px 0;
-            }
-            .island-header {
-                padding: 12px 14px;
-                gap: 10px;
-                margin-bottom: 16px;
-            }
-            .island-header .num {
-                font-size: 24px;
-            }
-            .island-header h3 {
                 font-size: 15px;
-            }
-            .island-header .sub {
-                font-size: 10px;
-            }
-            .detail-grid {
-                gap: 14px;
-            }
-            .detail-card {
-                padding: 12px;
-            }
-            .detail-card .label {
-                font-size: 12px;
-                margin-bottom: 8px;
-                padding-bottom: 5px;
-            }
-            .detail-card .label .emoji {
-                font-size: 14px;
-            }
-            .detail-card li {
-                font-size: 11px;
-                padding: 5px 0;
-                padding-left: 12px;
-                line-height: 1.5;
-            }
-            .detail-card li::before {
-                top: 12px;
-                width: 4px;
-                height: 4px;
-            }
-            .detail-card li .info {
-                font-size: 9px;
-                margin-top: 1px;
-            }
-            .detail-card li .tag {
-                font-size: 9px;
-                padding: 0 4px;
-                margin-left: 3px;
-            }
-            .budget-box {
-                padding: 10px 12px;
-            }
-            .budget-row {
-                font-size: 11px;
-                padding: 5px 0;
-            }
-            .budget-total .label-text {
-                font-size: 12px;
-            }
-            .budget-total .total-price {
-                font-size: 15px;
-            }
-            .season-section,
-            .itinerary-section {
-                padding: 10px;
-                margin: 20px 0;
-            }
-            .season-table {
-                font-size: 10px;
-                min-width: 360px;
-            }
-            .season-table th {
-                padding: 6px 3px;
-            }
-            .season-table td {
-                padding: 5px 3px;
-            }
-            .badge-best,
-            .badge-good,
-            .badge-avoid {
-                font-size: 9px;
-                padding: 1px 5px;
-            }
-            .transport-table {
-                font-size: 10px;
-                min-width: 340px;
-            }
-            .transport-table th {
-                padding: 8px 4px;
-            }
-            .transport-table td {
-                padding: 5px 4px;
-            }
-            .tip-card {
-                padding: 12px;
-            }
-            .tip-card h4 {
-                font-size: 13px;
-                margin-bottom: 6px;
-                gap: 6px;
-            }
-            .tip-card p,
-            .tip-card li {
-                font-size: 11px;
-                line-height: 1.55;
-            }
-            .tip-card li {
-                padding-left: 12px;
-            }
-            .note-box {
-                padding: 10px 12px;
-                font-size: 11px;
-                line-height: 1.55;
-                margin: 14px 0;
-            }
-            .contact-box {
-                padding: 8px 10px;
-                font-size: 10px;
-                margin: 8px 0;
-            }
-            .contact-box .ct-name {
-                font-size: 12px;
-            }
-            .contact-box .ct-line {
-                gap: 4px;
-                margin-top: 3px;
-            }
-            .contact-box .ct-label {
-                min-width: 34px;
-                font-size: 10px;
-            }
-            .itinerary-tabs {
-                gap: 5px;
-                margin-bottom: 14px;
-            }
-            .itinerary-tab {
-                font-size: 11px;
-                padding: 5px 10px;
-                border-width: 1.5px;
-            }
-            .itinerary-day {
-                gap: 8px;
-                padding: 10px 0;
-                padding-left: 2px;
-            }
-            .day-badge {
-                width: 38px;
-                height: 38px;
-                font-size: 11px;
-            }
-            .day-badge span {
-                font-size: 8px;
-            }
-            .day-content h4 {
-                font-size: 12px;
                 margin-bottom: 2px;
             }
-            .day-content p {
+            .island-card .nickname {
                 font-size: 11px;
-                line-height: 1.45;
+                margin-bottom: 4px;
             }
-            .spot-gallery {
-                gap: 8px;
-                margin: 10px 0;
+            .island-card p {
+                font-size: 12px;
+                line-height: 1.4;
             }
-            .spot-img-card img {
-                height: 140px;
-            }
-            .spot-img-card .spot-caption {
-                padding: 6px 10px;
-                font-size: 10px;
-                line-height: 1.45;
-            }
-            .spot-img-card .spot-caption strong {
-                font-size: 11px;
-            }
-            .spot-img-card .spot-caption .spot-desc {
-                font-size: 9px;
-            }
-            .footer {
-                padding: 24px 12px;
-                margin-top: 48px;
-            }
-            .footer p {
-                font-size: 11px;
-                line-height: 1.7;
-            }
-            .footer .disclaimer {
-                font-size: 9px;
-                margin-top: 10px;
-            }
-            .footer-links {
-                gap: 8px;
-                margin-top: 14px;
-            }
-            .footer-links a {
-                font-size: 10px;
-            }
-            #backTop {
-                width: 34px;
-                height: 34px;
-                font-size: 14px;
-                bottom: 12px;
-                right: 10px;
+            .island-card .icon {
+                font-size: 28px;
+                margin-bottom: 6px;
             }
         }
 
-        /* --- 320px: Tiny screens (very old / small devices) --- */
-        @media (max-width: 320px) {
-            .container {
-                padding: 0 10px;
-            }
-            .hero {
-                min-height: 380px;
-            }
-            .hero-content {
-                padding: 40px 10px 20px;
-            }
-            .hero h1 {
-                font-size: 17px;
-            }
-            .hero-sub {
-                font-size: 11px;
-            }
-            .hero-tag {
-                font-size: 8px;
-                padding: 3px 8px;
-            }
-            .hero-stats {
-                gap: 6px;
-            }
-            .hero-stat .num {
-                font-size: 15px;
-            }
-            .hero-stat .label {
-                font-size: 7px;
-            }
-            .nav-brand {
-                font-size: 12px;
-            }
-            .section-title h2 {
-                font-size: 16px;
-            }
-            .section-title p {
-                font-size: 10px;
-            }
-            .island-card {
-                padding: 12px 6px;
-            }
-            .island-card .icon {
-                font-size: 22px;
-            }
-            .island-card h3 {
+        @media (max-width: 600px) {
+            .detail-card ul li {
+                padding-left: 16px;
                 font-size: 13px;
+                padding-top: 6px;
+                padding-bottom: 6px;
             }
-            .island-card p {
-                font-size: 10px;
-            }
-            .island-header {
-                padding: 10px 12px;
-            }
-            .island-header .num {
-                font-size: 22px;
-            }
-            .island-header h3 {
-                font-size: 14px;
-            }
-            .detail-card {
-                padding: 10px;
-            }
-            .detail-card li {
-                font-size: 10px;
-                padding-left: 10px;
-            }
-            .detail-card li .info {
-                font-size: 8px;
-            }
-            .season-section,
-            .itinerary-section {
-                padding: 8px;
-            }
-            .season-table {
-                font-size: 9px;
-                min-width: 320px;
-            }
-            .season-table th,
-            .season-table td {
-                padding: 4px 2px;
-            }
-            .transport-table {
-                font-size: 9px;
-                min-width: 300px;
-            }
-            .tip-card {
-                padding: 10px;
-            }
-            .tip-card h4 {
+            .detail-card ul li .info {
+                display: block;
+                margin-top: 3px;
                 font-size: 12px;
+                padding-left: 4px;
+                word-break: break-word;
             }
-            .tip-card p,
-            .tip-card li {
-                font-size: 10px;
+            .detail-card ul li .tag {
+                display: inline-block;
+                margin-left: 4px;
+                font-size: 11px;
+                padding: 1px 6px;
             }
-            .note-box {
-                padding: 8px 10px;
-                font-size: 10px;
-            }
-            .contact-box {
-                padding: 6px 8px;
-                font-size: 9px;
-            }
-            .itinerary-tab {
-                font-size: 10px;
-                padding: 4px 8px;
+        }
+
+        @media (max-width: 450px) {
+            .itinerary-day {
+                gap: 10px;
+                padding: 12px 4px;
             }
             .day-badge {
-                width: 34px;
-                height: 34px;
-                font-size: 10px;
+                width: 44px;
+                height: 44px;
+                font-size: 12px;
             }
-            .day-content h4 {
-                font-size: 11px;
-            }
-            .day-content p {
-                font-size: 10px;
-            }
-            .spot-img-card img {
-                height: 120px;
-            }
-            .spot-img-card .spot-caption {
-                padding: 5px 8px;
+            .day-badge span {
                 font-size: 9px;
             }
-            .footer {
-                padding: 20px 10px;
+            .day-content h4 {
+                font-size: 14px;
             }
-            .footer p {
+            .day-content p {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .transport-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            .transport-table th,
+            .transport-table td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .contact-box .ct-line {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 2px 6px;
+            }
+            .contact-box .ct-label {
+                min-width: 40px;
+                font-size: 12px;
+            }
+            .contact-box .ct-val {
+                font-size: 12px;
+                word-break: break-word;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section-title {
+                margin: 40px 0 24px;
+            }
+            .section-title h2 {
+                font-size: 22px;
+            }
+            .budget-total .total-price {
+                font-size: 18px;
+            }
+            .budget-row {
+                font-size: 13px;
+                padding: 6px 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero-stats {
+                gap: 12px;
+            }
+            .hero-stat .num {
+                font-size: 20px;
+            }
+            .hero-stat .label {
                 font-size: 10px;
             }
-            #backTop {
-                width: 32px;
-                height: 32px;
-                font-size: 13px;
-                bottom: 10px;
-                right: 8px;
+            .budget-box {
+                padding: 16px;
+            }
+            .spot-img-card img {
+                height: 150px;
             }
         }
     </style>
@@ -2083,12 +1382,11 @@
         <canvas id="heroCanvas"></canvas>
         <div class="hero-content">
 
-            <!-- 修改：hero-tag-wrapper 包含標籤 + 分享連結 -->
-			<div class="hero-tag-wrapper">
-				<span class="hero-tag">
-					<span class="shimmer-text">2026 伊君尊榮旅行團</span>
-				</span>
-			</div>
+            <div class="hero-tag-wrapper">
+                <span class="hero-tag">
+                    <span class="shimmer-text">2026 伊君尊榮旅行團</span>
+                </span>
+            </div>
 
             <h1>馬祖四鄉五島旅遊終極指南</h1>
             <p class="hero-sub">閩東古韻 x 戰地秘境 x 藍眼淚奇觀<br>從南竿到東引，五座島嶼，五種風情<br>一份攻略，帶你玩遍馬祖每一寸海角</p>
@@ -2323,7 +1621,7 @@
                     <div class="contact-box">
                         <div class="ct-name">&#127869; 九榕閣無菜單料理</div>
                         <div class="ct-line"><span class="ct-label">地址：</span><span class="ct-val">連江縣南竿鄉復興村</span></div>
-                        <div class="ct-line"><span class="ct-label">特色：</span><span class="ct-val">地道馬祖風味無菜味無菜單料理，紅糟系列與海鮮創意融合</span></div>
+                        <div class="ct-line"><span class="ct-label">特色：</span><span class="ct-val">地道馬祖風味無菜單料理，紅糟系列與海鮮創意融合</span></div>
                     </div>
                     <div class="contact-box">
                         <div class="ct-name">&#127869; 蝦寮食堂</div>
@@ -3160,6 +2458,8 @@
 
             <div class="note-box" style="margin-top:20px;">
                 <strong>島上交通：</strong>各島面積不大，機車是最主要交通工具。南竿、北竿機車租賃約 NT$500-600/天（含油）。部分景點可搭計程車或公車，但班次有限。東引、莒光島上機車租賃約 NT$400-500/天。
+                <br><br>
+                <strong>馬祖公車即時動態：</strong>可透過 <a href="https://www.matsuebus.tw/" target="_blank" rel="noopener" style="color:var(--ocean-mid);">馬祖公車即時動態系統 matsuebus.tw</a> 查詢各島公車即時到站資訊與班次。
             </div>
 
             <div class="note-box">
@@ -3273,6 +2573,7 @@
         <div class="footer-links">
             <a href="https://www.matsu-nsa.gov.tw" target="_blank" rel="noopener">馬祖國家風景區官網</a>
             <a href="https://matsuebs.com" target="_blank" rel="noopener">船班訂票系統</a>
+            <a href="https://www.matsuebus.tw/" target="_blank" rel="noopener">馬祖公車即時動態</a>
             <a href="#overview">回到頂部概覽</a>
         </div>
         <p class="disclaimer">
